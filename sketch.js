@@ -13,26 +13,24 @@ function draw() {
   noFill();
   ellipse(x, y, 100, 100);
 
-  if(x > width){
+  if (x > width) {
     speed = -1;
-    x = random(0,400);
-    y = random(0,400)
-    
+    x = random(0, 400);
+    y = random(0, 400);
   }
-  if(x <= 0){
+  if (x <= 0) {
     speed = 1;
-    y = random(0,400)
+    y = random(0, 400);
   }
-  if(y > 400){
+  if (y > 400) {
     speed = -1;
-    y = random(0, 400)
+    y = random(0, 400);
   }
 
-  if(y <= 0){
+  if (y <= 0) {
     speed = -1;
   }
-  
+
   x = x + speed;
   y = y + speed;
- 
 }
