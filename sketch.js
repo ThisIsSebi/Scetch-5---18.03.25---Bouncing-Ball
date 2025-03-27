@@ -1,36 +1,43 @@
-var x = 0;
-var y = 0;
-var speed = 1;
+let bubble1;
 
 function setup() {
   createCanvas(600, 400);
+  bubble1 = new Bubble();
 }
 
 function draw() {
   background(0);
-  stroke(255);
-  strokeWeight(4);
-  noFill();
-  ellipse(x, y, 100, 100);
 
-  if (x > width) {
-    speed = -1;
-    x = random(0, 400);
-    y = random(0, 400);
-  }
-  if (x <= 0) {
-    speed = 1;
-    y = random(0, 400);
-  }
-  if (y > 400) {
-    speed = -1;
-    y = random(0, 400);
+  bubble1.show();
+  bubble1.direction();
+  bubble1.move();
+}
+
+class Bubble {
+  constructor() {
+    this.x = 50;
+    this.y = 50;
+    this.speed = 3;
   }
 
-  if (y <= 0) {
-    speed = -1;
+  move() {
+    this.x = this.x + this.speed;
+    // this.y = this.y + this.speed;
   }
 
-  x = x + speed;
-  y = y + speed;
+  direction() {
+    if (this.x >= 600) {
+      this.speed = -5;
+    }
+    if (this.x <= 0) {
+      this.speed = 5;
+    }
+  }
+
+  show() {
+    stroke(255);
+    strokeWeight(4);
+    noFill();
+    ellipse(this.x, this.y, 20, 20);
+  }
 }
