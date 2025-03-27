@@ -17,20 +17,22 @@ class Bubble {
   constructor() {
     this.x = 50;
     this.y = 50;
-    this.speed = 3;
+    this.speedX = 1;
+    this.speedY = 1;
   }
 
   move() {
-    this.x = this.x + this.speed;
-    // this.y = this.y + this.speed;
+    this.x = this.x + this.speedX;
+    this.y = this.y + this.speedY;
   }
 
   direction() {
-    if (this.x >= 600) {
-      this.speed = -5;
+    if (this.x >= 600 || this.x <= 0) {
+      this.speedX = this.speedX * -1; 
     }
-    if (this.x <= 0) {
-      this.speed = 5;
+    
+    if(this.y >= 400 || this.y <= 0){
+      this.speedY = this.speedY * -1;
     }
   }
 
