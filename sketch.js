@@ -17,8 +17,8 @@ class Bubble {
   constructor() {
     this.x = 50;
     this.y = 50;
-    this.speedX = 1;
-    this.speedY = 1;
+    this.speedX = 4;
+    this.speedY = 2;
   }
 
   move() {
