@@ -6,11 +6,14 @@ function setup() {
 }
 
 function draw() {
-  background(0);
-
+  background(0)
   bubble1.show();
   bubble1.direction();
   bubble1.move();
+
+  line(300,0,300,400)
+  fill(255)
+  circle(300,200,50,50)
 }
 
 class Bubble {
@@ -19,6 +22,7 @@ class Bubble {
     this.y = 50;
     this.speedX = 4;
     this.speedY = 2;
+    this.colour = "red"
   }
 
   move() {
@@ -29,17 +33,19 @@ class Bubble {
   direction() {
     if (this.x >= 600 || this.x <= 0) {
       this.speedX = this.speedX * -1; 
+      this.colour = "red";
     }
     
     if(this.y >= 400 || this.y <= 0){
       this.speedY = this.speedY * -1;
+      this.colour = "green";
     }
   }
 
   show() {
     stroke(255);
     strokeWeight(4);
-    noFill();
-    ellipse(this.x, this.y, 20, 20);
+    fill(this.colour);
+    ellipse(this.x, this.y, 30, 30);
   }
 }
