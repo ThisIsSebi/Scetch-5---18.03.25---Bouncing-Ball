@@ -7,13 +7,12 @@ function setup() {
 
 function draw() {
   background(0)
+  line(300,0,300,400)
+  noFill()
+  circle(300,200,50,50)
   bubble1.show();
   bubble1.direction();
   bubble1.move();
-
-  line(300,0,300,400)
-  fill(255)
-  circle(300,200,50,50)
 }
 
 class Bubble {
